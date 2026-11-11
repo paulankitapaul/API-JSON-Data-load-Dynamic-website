@@ -1,8 +1,8 @@
-const loadData = () => {
+const loadData = async () => {
     const url = ('https://jsonplaceholder.typicode.com/todos')
-    fetch(url)
-        .then(res => res.json())
-        .then(data => displayData(data));
+    const res = await fetch(url)
+    const data = await res.json()
+    displayData(data)
 }
 // {
 //     "userId": 9,
